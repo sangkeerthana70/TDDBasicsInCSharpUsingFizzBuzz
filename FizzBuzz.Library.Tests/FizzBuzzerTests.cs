@@ -8,35 +8,32 @@ namespace FizzBuzz.Library.Tests
     public class FizzBuzzerTests
     {
        
-        [Test]
+        //[Test]
         //    public void SampleTest()
         //    {
         //        Assert.Pass();
         //    }
         //}
 
-        public void Buzzer_When1_Returns1()
+        [Test]
+        public void Buzzer_WhenDefault_ReturnsInput([Values(1, 2, 4)] int input)
         {
-            //Arrange
-            int input = 1;
-
-            //Act
+ 
             string output = FizzBuzzer.GetValue(input);
             Console.WriteLine(output);
 
-            //Assert
-            Assert.AreEqual("1", output);
+            Assert.AreEqual(input.ToString(), output);
         }
 
         [Test]
-        public void Buzzer_When2_Returns2()
+        public void Buzzer_When3_ReturnsFizz()
         {
-            int input = 2;
+            int input = 3;
 
             string output = FizzBuzzer.GetValue(input);
             Console.WriteLine(output);
 
-            Assert.AreEqual("2", output);
+            Assert.AreEqual("Fizz", output);
         }
     }
 }
