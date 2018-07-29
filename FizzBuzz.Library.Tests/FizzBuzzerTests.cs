@@ -26,14 +26,23 @@ namespace FizzBuzz.Library.Tests
         }
 
         [Test]
-        public void Buzzer_When3_ReturnsFizz()
+        public void Buzzer_WhenDiv3_ReturnsFizz([Values(3,6)] int input)
         {
-            int input = 3;
-
+            Console.WriteLine(input);
             string output = FizzBuzzer.GetValue(input);
             Console.WriteLine(output);
 
             Assert.AreEqual("Fizz", output);
+        }
+
+        [Test]
+        public void Buzzer_When5_ReturnsBuzz()
+        {
+            int input = 5;
+            string output = FizzBuzzer.GetValue(input);
+            Console.WriteLine(output);
+
+            Assert.AreEqual("Buzz", output);
         }
     }
 }
